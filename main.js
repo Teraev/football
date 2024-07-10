@@ -40,7 +40,7 @@ ball.ondragend = (e) => {
   const vorotaLeftRect = vorota_left.getBoundingClientRect();
   const vorotaRightRect = vorota_prav.getBoundingClientRect();
 
-  if (x < vorotaLeftRect.left) {
+  if (x >= vorotaLeftRect.left && x <= vorotaLeftRect.right && y >= vorotaLeftRect.top && y <= vorotaLeftRect.bottom) {
     alert("Гол в левые ворота!");
     ball.style.top = '50%';
     ball.style.left = '50%';
@@ -49,7 +49,7 @@ ball.ondragend = (e) => {
     messi.play();
   }
 
-  if (x > vorotaRightRect.right) {
+  if (x >= vorotaRightRect.left && x <= vorotaRightRect.right && y >= vorotaRightRect.top && y <= vorotaRightRect.bottom) {
       alert("Гол в правые ворота!");
       ball.style.top = '50%';
       ball.style.left = '50%';
